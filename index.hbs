@@ -1,0 +1,39 @@
+{{!< default}}
+{{> header}}
+
+<div class="wrapper_blognum">
+	<main class="main_blognum" role="main">
+
+		{{#foreach posts}}
+		<article class="article_blognum" role="article" itemscope itemtype="http://schema.org/Article">
+			<header class="postheader_blognum">
+				<h1 class="posttitle_blognum" itemprop="headline"><a href="{{{url}}}#header" rel="bookmark">{{title}}</a></h1>
+			</header>
+			<div class="postcontent_blognum" itemprop="articleBody">
+				{{content words=50}}
+			</div>
+			<div class="readmore_blognum">
+				<a class="btn" href="{{{url}}}#header" rel="bookmark">Читать далее →</a>
+			</div>
+			<footer class="article_meta_blognum">
+				<span  class="dimmed">Posted on </span>
+				<time class="date_blognum" datetime="{{date format="YYYY-MM-DD"}}" itemprop="datePublished">{{date format='dddd DD MMM YYYY'}}</time>
+				{{#if tags}}
+					<div>
+						<span class="dimmed"> Tagged in </span>
+						<span> {{tags separator=" , "}}</span>
+					</div>
+				{{/if}}
+			</footer>
+		</article>
+		{{/foreach}}
+
+		{{#if pagination}}
+		<div class="pagination_blognum">
+			{{{pagination}}}
+		</div>
+		{{/if}}
+
+	</main>
+</div>
+{{> footer}}

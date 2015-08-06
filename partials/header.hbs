@@ -1,0 +1,39 @@
+{{#if post.image}}
+	<div role='banner' class="header_blognum post" style="background-image:url('{{post.image}}')">
+		{{#if @blog.logo}}
+		<a class="logo_blognum post" href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="{{@blog.title}}" /></a>
+		{{/if}}
+	</div>
+{{else if @blog.cover}}
+	<div role='banner' class="header_blognum" style="background-image:url('{{@blog.cover}}')">
+		{{#if @blog.logo}}
+		<a class="logo_blognum" href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="{{@blog.title}}" /></a>
+		{{/if}}
+		<h1 class="blogtitle_blognum">
+			<a title="{{@blog.title}}" href='{{@blog.url}}'>
+			{{{@blog.title}}}
+			</a>
+		</h1>
+		<h4 class="blogdescription_blognum">
+			<a title="{{@blog.title}}" href='{{@blog.url}}' class="darker_blognum">
+			{{@blog.description}}
+			</a>
+		</h4>
+	</div>
+{{ else }}
+	<div role='banner' class="header_blognum">
+		{{#if @blog.logo}}
+		<a class="logo_blognum" href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="{{@blog.title}}" /></a>
+		{{/if}}
+		<h1 class="blogtitle_blognum">
+			<a title="{{@blog.title}}" href='{{@blog.url}}'>
+			{{{@blog.title}}}
+			</a>
+		</h1>
+		<h4 class="blogdescription_blognum">
+			<a title="{{@blog.title}}" href='{{@blog.url}}'>
+			{{@blog.description}}
+			</a>
+		</h4>
+	</div>
+{{/if}}
